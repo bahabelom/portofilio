@@ -9,18 +9,20 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "next": "14.2.18",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "next": "14.2.18"
+    "resend": "^6.4.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^8",
-    "eslint-config-next": "14.2.18"
+    "eslint-config-next": "14.2.18",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
