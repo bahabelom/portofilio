@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
           <div className="flex space-x-6">
             <a
-              href="https://github.com"
+              href="https://github.com/bahabelom"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-colors"
@@ -25,7 +25,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/bahabelom"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-colors"
