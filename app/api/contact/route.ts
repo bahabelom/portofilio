@@ -3,9 +3,6 @@ import { Resend } from "resend";
 
 // Initialize Resend with API key check
 const resendApiKey = process.env.RESEND_API_KEY;
-if (!resendApiKey) {
-  console.error("RESEND_API_KEY is not set in environment variables");
-}
 
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
@@ -32,7 +29,6 @@ export async function POST(request: NextRequest) {
 
         // Check if Resend is configured
         if (!resend) {
-            console.error("Resend is not initialized. Check RESEND_API_KEY in .env.local");
             return NextResponse.json(
                 {
                     message: "Email service is not configured. Please contact the administrator.",
@@ -44,11 +40,10 @@ export async function POST(request: NextRequest) {
 
         // Send email using Resend
         try {
-            console.log("Attempting to send email via Resend...");
             // Use environment variable for FROM email, fallback to onboarding email for testing
             const fromEmail = process.env.RESEND_FROM_EMAIL || "Portfolio Contact <onboarding@resend.dev>";
             
-            const result = await resend.emails.send({
+            await resend.emails.send({
                 from: fromEmail,
                 to: "bahabelomgebremedhn2@gmail.com",
                 replyTo: email,
@@ -82,10 +77,6 @@ ${message}
         `,
             });
 
-            console.log("Email sent successfully:", result);
-            console.log("Email ID:", result.data?.id);
-            console.log("Check your Resend dashboard at https://resend.com/emails to see delivery status");
-
             return NextResponse.json(
                 {
                     message: "Message sent successfully! I'll get back to you soon.",
@@ -94,12 +85,6 @@ ${message}
                 { status: 200 }
             );
         } catch (emailError: any) {
-            console.error("Resend email error details:", {
-                message: emailError?.message,
-                name: emailError?.name,
-                statusCode: emailError?.statusCode,
-                error: emailError
-            });
             return NextResponse.json(
                 {
                     message: `Failed to send email: ${emailError?.message || "Unknown error"}. Please try again later.`,
@@ -109,7 +94,6 @@ ${message}
             );
         }
     } catch (error) {
-        console.error("Error processing contact form:", error);
         return NextResponse.json(
             {
                 message: "Failed to send message. Please try again later.",
