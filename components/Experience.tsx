@@ -2,7 +2,7 @@ export default function Experience() {
   const experiences = [
     {
       company: "IE Networks",
-      position: "Full Stack Developer",
+      position: "Software Developer",
       location: "Addis Ababa, Ethiopia",
       period: "May 2025 – Present",
       type: "Current",
@@ -14,7 +14,7 @@ export default function Experience() {
     },
     {
       company: "Pilasa Technologies",
-      position: "Full Stack Developer",
+      position: "Software Developer",
       location: "Ethiopia (Hybrid)",
       period: "Jan 2023 – May 2025",
       type: "Previous",
