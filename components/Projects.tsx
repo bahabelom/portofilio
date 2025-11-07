@@ -39,6 +39,7 @@ export default function Projects() {
       technologies: ["Next.js", "React", "TypeScript", "Payment Integration", "Stripe/PayPal", "Donation Management", "Secure Transactions"],
       link: "#",
       featured: false,
+      image: "/projects/tda.png",
       highlights: [
         "Secure payment gateway integration",
         "Multiple payment methods support",
@@ -53,6 +54,7 @@ export default function Projects() {
       technologies: ["Next.js", "React", "TypeScript", "NestJS", "HR Management", "Payroll System", "Attendance Tracking"],
       link: "#",
       featured: false,
+      image: "/projects/online doctor.png",
       highlights: [
         "Comprehensive HR management system",
         "Payroll and attendance tracking",
@@ -67,6 +69,7 @@ export default function Projects() {
       technologies: ["Next.js", "React", "TypeScript", "Case Management", "Document Management", "Legal System"],
       link: "#",
       featured: false,
+      image: "/projects/tda.png",
       highlights: [
         "Case management system",
         "Document tracking and management",
@@ -81,6 +84,7 @@ export default function Projects() {
       technologies: ["Flutter", "React Native", "Node.js", "AI/ML", "Healthcare API", "Symptom Analysis", "Telemedicine"],
       link: "#",
       featured: true,
+      image: "/projects/online doctor.png",
       highlights: [
         "Symptom-based disease diagnosis",
         "AI-powered medical suggestions",
