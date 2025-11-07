@@ -32,11 +32,68 @@ export default function Projects() {
         "Mobile-responsive design",
       ],
     },
+    {
+      title: "TDA - Tigray Development Association",
+      description:
+        "A comprehensive web platform for Tigray Development Association featuring secure payment integration for fundraising and donations. Enables seamless online donations with multiple payment gateways, donor management, and transparent fund tracking.",
+      technologies: ["Next.js", "React", "TypeScript", "Payment Integration", "Stripe/PayPal", "Donation Management", "Secure Transactions"],
+      link: "#",
+      featured: false,
+      highlights: [
+        "Secure payment gateway integration",
+        "Multiple payment methods support",
+        "Donor management system",
+        "Transparent fund tracking and reporting",
+      ],
+    },
+    {
+      title: "Tigray Education Bureau - HR Management",
+      description:
+        "A comprehensive HR management web application for Tigray Education Bureau. Streamlines employee management, payroll processing, attendance tracking, and administrative workflows for educational institutions.",
+      technologies: ["Next.js", "React", "TypeScript", "NestJS", "HR Management", "Payroll System", "Attendance Tracking"],
+      link: "#",
+      featured: false,
+      highlights: [
+        "Comprehensive HR management system",
+        "Payroll and attendance tracking",
+        "Employee database management",
+        "Administrative workflow automation",
+      ],
+    },
+    {
+      title: "Tigray Justice Bureau",
+      description:
+        "A web application developed for Tigray Justice Bureau to manage legal processes, case tracking, and administrative workflows. Provides efficient case management and document handling for the justice system.",
+      technologies: ["Next.js", "React", "TypeScript", "Case Management", "Document Management", "Legal System"],
+      link: "#",
+      featured: false,
+      highlights: [
+        "Case management system",
+        "Document tracking and management",
+        "Legal process workflow",
+        "Administrative dashboard",
+      ],
+    },
+    {
+      title: "Online Healthcare System - Mobile App",
+      description:
+        "A comprehensive mobile healthcare application developed as a final year graduation project. Features symptom analysis, disease diagnosis suggestions, vaccine recommendations, and full online doctor consultation system. Enables users to input symptoms and receive AI-powered disease predictions with medical guidance.",
+      technologies: ["Flutter", "React Native", "Node.js", "AI/ML", "Healthcare API", "Symptom Analysis", "Telemedicine"],
+      link: "#",
+      featured: true,
+      highlights: [
+        "Symptom-based disease diagnosis",
+        "AI-powered medical suggestions",
+        "Vaccine recommendation system",
+        "Full online doctor consultation",
+        "Mobile-first healthcare platform",
+      ],
+    },
   ];
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-800 dark:text-gray-200">
             Featured Projects
@@ -46,7 +103,7 @@ export default function Projects() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -63,7 +120,7 @@ export default function Projects() {
 
               {/* Project Image */}
               {project.image && (
-                <div className="relative h-64 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                <div className="relative h-56 bg-gray-200 dark:bg-gray-700 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={`${project.title} screenshot`}
@@ -75,65 +132,87 @@ export default function Projects() {
                 </div>
               )}
 
-              <div className="p-8">
+              <div className="p-7">
                 <div className="mb-4">
-                  <h3 className="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
                   <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-lg">
+                <p className="text-gray-600 dark:text-gray-400 mb-5 leading-relaxed text-base line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Highlights */}
                 {project.highlights && (
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {project.highlights.map((highlight, hIndex) => (
-                        <li key={hIndex} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-                          <svg className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="mb-5">
+                    <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">Key Features:</h4>
+                    <ul className="space-y-1.5">
+                      {project.highlights.slice(0, 3).map((highlight, hIndex) => (
+                        <li key={hIndex} className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-400">
+                          <svg className="w-3 h-3 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span>{highlight}</span>
+                          <span className="line-clamp-1">{highlight}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 )}
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-4 py-2 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium shadow-sm border border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+                      className="px-3 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium shadow-sm border border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 4 && (
+                    <span className="px-3 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium shadow-sm border border-gray-200 dark:border-gray-600">
+                      +{project.technologies.length - 4}
+                    </span>
+                  )}
                 </div>
 
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/link inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
-                >
-                  <span>Visit Live Site</span>
-                  <svg
-                    className="w-5 h-5 transition-transform group-hover/link:translate-x-1"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                {project.link && project.link !== "#" ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/link inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:scale-105 transition-all duration-300"
                   >
-                    <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
+                    <span>Visit Live Site</span>
+                    <svg
+                      className="w-4 h-4 transition-transform group-hover/link:translate-x-1"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                ) : (
+                  <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-400 rounded-lg font-semibold text-sm cursor-not-allowed">
+                    <span>Project Details</span>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                )}
               </div>
 
               {/* Hover Effect Overlay */}
