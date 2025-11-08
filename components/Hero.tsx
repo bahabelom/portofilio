@@ -6,9 +6,24 @@ import Link from "next/link";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Software Developer";
 
   useEffect(() => {
     setMounted(true);
+    
+    // Typewriter effect for Software Developer
+    let currentIndex = 0;
+    const typeInterval = setInterval(() => {
+      if (currentIndex < fullText.length) {
+        setDisplayText(fullText.slice(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        clearInterval(typeInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typeInterval);
   }, []);
 
   const currentYear = new Date().getFullYear();
@@ -17,8 +32,13 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
       
+      {/* Floating Orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
@@ -28,9 +48,9 @@ export default function Hero() {
           <div className={`flex-1 text-center lg:text-left transition-all duration-1000 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}>
-            {/* Greeting */}
+            {/* Greeting - Made Bigger */}
             <div className="mb-4">
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 font-medium">
+              <p className="text-2xl sm:text-3xl lg:text-4xl text-gray-600 dark:text-gray-400 font-medium">
                 Hi, my name is
               </p>
             </div>
@@ -40,9 +60,12 @@ export default function Hero() {
               Bahabelom
             </h1>
 
-            {/* Title */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
-              Software Developer
+            {/* Title with Typewriter Effect */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient bg-300%">
+                {displayText}
+                <span className="animate-pulse text-blue-600">|</span>
+              </span>
             </h2>
 
             {/* Description */}
@@ -57,7 +80,7 @@ export default function Hero() {
                 href="https://github.com/bahabelom"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 group"
+                className="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 border border-gray-200 dark:border-gray-700 group"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -68,7 +91,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/bahabelom"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 group"
+                className="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 border border-gray-200 dark:border-gray-700 group"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -77,7 +100,7 @@ export default function Hero() {
               </a>
               <a
                 href="mailto:bahabelomgebremedhn2@gmail.com"
-                className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 group"
+                className="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 border border-gray-200 dark:border-gray-700 group"
                 aria-label="Email"
               >
                 <svg className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,28 +113,55 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
                 href="#projects"
-                className="px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 text-center"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110 hover:-translate-y-1 overflow-hidden group relative"
               >
-                View Projects
+                <span className="relative z-10 flex items-center gap-2">
+                  View Projects
+                  <svg
+                    className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <Link
                 href="#contact"
-                className="px-6 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 text-center"
+                className="px-8 py-4 border-2 border-blue-600 dark:border-purple-600 text-blue-600 dark:text-purple-400 rounded-xl font-semibold text-lg backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-lg hover:shadow-xl"
               >
-                Get In Touch
+                <span className="flex items-center gap-2">
+                  Get In Touch
+                  <svg
+                    className="w-5 h-5 transition-transform group-hover:rotate-12"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </span>
               </Link>
             </div>
 
             {/* Stats */}
             <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-8">
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   {yearsOfExperience}+
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                   10+
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Projects</div>
@@ -124,7 +174,7 @@ export default function Hero() {
             mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           }`}>
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-200 dark:border-gray-700">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700 ring-4 ring-blue-500/20 dark:ring-purple-500/20">
                 <Image
                   src="/projects/myphoto.jpg"
                   alt="Bahabelom - Software Developer"
@@ -135,7 +185,7 @@ export default function Hero() {
                 />
               </div>
               {/* Decorative corner accent */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg opacity-20 -z-10"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg opacity-30 -z-10"></div>
             </div>
           </div>
         </div>
