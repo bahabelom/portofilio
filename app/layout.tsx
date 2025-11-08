@@ -13,8 +13,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Software Developer at IE Networks",
-  description: "Portfolio of a software developer at IE Networks showcasing projects, skills, and experience",
+  title: "Bahabelom | Software Developer",
+  description: "Portfolio of Bahabelom Gebremedhn - Software Developer showcasing projects, skills, and experience",
 };
 
 export default function RootLayout({
