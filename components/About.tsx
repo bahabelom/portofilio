@@ -48,7 +48,7 @@ export default function About() {
             }`}
           >
             I'm a passionate software developer focused on creating innovative solutions and delivering
-            high-quality software products. With a strong foundation in modern web technologies, I enjoy
+            high-quality software products. With a strong foundation in modern web and mobile technologies, I enjoy
             tackling complex challenges and turning ideas into reality.
           </p>
           <p 
@@ -57,7 +57,7 @@ export default function About() {
             }`}
           >
             My approach to development combines technical expertise with creative problem-solving,
-            ensuring that every project I work on is not only functional but also user-friendly and
+            ensuring that every project I work on—whether it's a web application or mobile app—is not only functional but also user-friendly and
             scalable. I'm always eager to learn new technologies and stay up-to-date with the
             latest industry trends.
           </p>
@@ -77,7 +77,7 @@ export default function About() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {["React", "Next.js", "NestJS", "TypeScript"].map((skill, index) => (
+          {["React", "Next.js", "NestJS", "Flutter"].map((skill, index) => (
             <div
               key={skill}
               className="p-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-800 rounded-lg text-center border border-blue-200 dark:border-purple-700 hover:shadow-lg hover:scale-105 transition-all duration-300"

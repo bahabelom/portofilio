@@ -71,7 +71,7 @@ export default function Hero() {
             {/* Description */}
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0">
               I build exceptional digital experiences through clean code and innovative solutions. 
-              Specialized in creating scalable web applications with modern technologies.
+              Specialized in creating scalable web and mobile applications with modern technologies.
             </p>
 
             {/* Social Links */}

@@ -9,6 +9,10 @@ export default function Skills() {
       skills: ["Node.js", "NestJS", "Python", "REST APIs", "GraphQL", "Microservices", "Database Design"],
     },
     {
+      title: "Mobile Development",
+      skills: ["Flutter", "React Native", "Mobile UI/UX", "Cross-platform Development"],
+    },
+    {
       title: "Tools & Technologies",
       skills: ["Git", "Docker", "CI/CD", "AWS", "Jira", "Testing", "Agile/Scrum"],
     },
@@ -20,7 +24,7 @@ export default function Skills() {
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-gray-800 dark:text-gray-200">
           Skills & Technologies
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {skillCategories.map((category, index) => (
             <div
               key={index}
