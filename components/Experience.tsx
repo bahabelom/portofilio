@@ -1,4 +1,32 @@
+"use client";
+
+import { useEffect, useState, useRef } from "react";
+
 export default function Experience() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const experiences = [
     {
       company: "IE Networks",
@@ -47,11 +75,17 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <section 
+      ref={sectionRef}
+      id="experience" 
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+    >
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-800 dark:text-gray-200">
-            💼 Professional Experience
+            Experience
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Building scalable solutions and delivering exceptional results across diverse projects
@@ -65,7 +99,13 @@ export default function Experience() {
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <div key={index} className="relative flex gap-8">
+              <div 
+                key={index} 
+                className={`relative flex gap-8 transition-all duration-1000 ${
+                  isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
                 {/* Timeline Dot */}
                 <div className="hidden md:flex flex-shrink-0 items-start pt-2">
                   <div className={`relative w-16 h-16 rounded-full flex items-center justify-center ${
@@ -81,7 +121,7 @@ export default function Experience() {
                 </div>
 
                 {/* Content Card */}
-                <div className="flex-1 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8">
+                <div className="flex-1 bg-gradient-to-br from-gray-50 to-white dark:from-gray-700 dark:to-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border border-gray-200 dark:border-gray-700">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
@@ -94,7 +134,7 @@ export default function Experience() {
                           </span>
                         )}
                       </div>
-                      <h4 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                      <h4 className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
                         {exp.company}
                       </h4>
                       <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
@@ -132,7 +172,9 @@ export default function Experience() {
         </div>
 
         {/* Education Section */}
-        <div className="mt-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+        <div className={`mt-16 bg-gradient-to-br from-gray-50 to-white dark:from-gray-700 dark:to-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700 transition-all duration-1000 delay-600 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,9 +185,9 @@ export default function Experience() {
             </div>
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
-                🎓 Education
+                Education
               </h3>
-              <h4 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-1">
+              <h4 className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">
                 {education.degree}
               </h4>
               <p className="text-lg text-gray-700 dark:text-gray-300 font-medium mb-2">
@@ -165,4 +207,3 @@ export default function Experience() {
     </section>
   );
 }
-
