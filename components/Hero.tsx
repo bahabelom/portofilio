@@ -56,8 +56,8 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white">
-              Bahabelom
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white whitespace-nowrap overflow-x-auto">
+              Bahabelom Gebremedhn
             </h1>
 
             {/* Title with Typewriter Effect */}
@@ -177,7 +177,7 @@ export default function Hero() {
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700 ring-4 ring-blue-500/20 dark:ring-purple-500/20">
                 <Image
                   src="/projects/myphoto.jpg"
-                  alt="Bahabelom - Software Developer"
+                  alt="Bahabelom Gebremedhn - Software Developer"
                   fill
                   className="object-cover"
                   priority
