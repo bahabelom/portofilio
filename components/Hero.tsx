@@ -56,7 +56,7 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white whitespace-nowrap overflow-x-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white whitespace-nowrap">
               Bahabelom Gebremedhn
             </h1>
 
