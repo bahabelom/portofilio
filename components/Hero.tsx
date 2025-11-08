@@ -40,7 +40,7 @@ export default function Hero() {
       <div className="absolute -bottom-8 left-1/2 w-48 h-48 sm:w-72 sm:h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      {/* Grid pattern removed */}
 
       <div className="relative max-w-6xl mx-auto z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
