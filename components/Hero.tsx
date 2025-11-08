@@ -35,9 +35,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
       
       {/* Floating Orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+      <div className="absolute top-40 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-8 left-1/2 w-48 h-48 sm:w-72 sm:h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -56,12 +56,12 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white whitespace-nowrap">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 text-gray-900 dark:text-white whitespace-nowrap">
               Bahabelom Gebremedhn
             </h1>
 
             {/* Title with Typewriter Effect */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient bg-300%">
                 {displayText}
                 <span className="animate-pulse text-blue-600">|</span>
@@ -69,7 +69,7 @@ export default function Hero() {
             </h2>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0">
               I build exceptional digital experiences through clean code and innovative solutions. 
               Specialized in creating scalable web applications with modern technologies.
             </p>
@@ -132,15 +132,15 @@ export default function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-2 sm:px-0">
               <Link
                 href="#projects"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110 hover:-translate-y-1 overflow-hidden group relative"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-semibold text-base sm:text-lg shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:-translate-y-1 overflow-hidden group relative text-center"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center justify-center gap-2">
                   View Projects
                   <svg
-                    className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                    className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -155,12 +155,12 @@ export default function Hero() {
               </Link>
               <Link
                 href="#contact"
-                className="px-8 py-4 border-2 border-blue-600 dark:border-purple-600 text-blue-600 dark:text-purple-400 rounded-xl font-semibold text-lg backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-600 dark:border-purple-600 text-blue-600 dark:text-purple-400 rounded-xl font-semibold text-base sm:text-lg backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:-translate-y-1 shadow-lg hover:shadow-xl text-center"
               >
-                <span className="flex items-center gap-2">
+                <span className="flex items-center justify-center gap-2">
                   Get In Touch
                   <svg
-                    className="w-5 h-5 transition-transform group-hover:rotate-12"
+                    className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:rotate-12"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -207,8 +207,6 @@ export default function Hero() {
                   style={{ position: 'absolute', objectFit: 'cover' }}
                 />
               </div>
-              {/* Decorative corner accent */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg opacity-30 -z-10"></div>
             </div>
           </div>
         </div>

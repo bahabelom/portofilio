@@ -31,11 +31,11 @@ export default function About() {
     <section 
       ref={sectionRef}
       id="about" 
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+      className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
     >
       <div className="max-w-4xl mx-auto">
         <h2 
-          className={`text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200 transition-all duration-1000 ${
+          className={`text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-gray-800 dark:text-gray-200 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -43,7 +43,7 @@ export default function About() {
         </h2>
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <p 
-            className={`text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-4 transition-all duration-1000 delay-200 ${
+            className={`text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-4 transition-all duration-1000 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
@@ -52,7 +52,7 @@ export default function About() {
             tackling complex challenges and turning ideas into reality.
           </p>
           <p 
-            className={`text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-4 transition-all duration-1000 delay-400 ${
+            className={`text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-4 transition-all duration-1000 delay-400 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
@@ -62,7 +62,7 @@ export default function About() {
             latest industry trends.
           </p>
           <p 
-            className={`text-lg text-gray-600 dark:text-gray-400 leading-relaxed transition-all duration-1000 delay-600 ${
+            className={`text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed transition-all duration-1000 delay-600 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >

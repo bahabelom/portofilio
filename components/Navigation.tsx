@@ -35,7 +35,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent truncate max-w-[200px] sm:max-w-none"
           >
             Bahabelom Gebremedhn
           </Link>

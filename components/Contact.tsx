@@ -66,25 +66,25 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-gray-800 dark:text-gray-200">
           Get In Touch
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
               Let's Connect
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
               I'm always open to discussing new projects, creative ideas, or opportunities to be
               part of your vision. Feel free to reach out!
             </p>
             <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-start sm:items-center space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -95,20 +95,20 @@ export default function Contact() {
                     <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Email</p>
                   <a
                     href="mailto:bahabelomgebremedhn2@gmail.com"
-                    className="text-gray-800 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-sm sm:text-base text-gray-800 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-all"
                   >
                     bahabelomgebremedhn2@gmail.com
                   </a>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-start sm:items-center space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -120,9 +120,9 @@ export default function Contact() {
                     <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
-                  <p className="text-gray-800 dark:text-gray-200 font-medium">Addis Abeba, Ethiopia</p>
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Location</p>
+                  <p className="text-sm sm:text-base text-gray-800 dark:text-gray-200 font-medium">Addis Abeba, Ethiopia</p>
                 </div>
               </div>
             </div>

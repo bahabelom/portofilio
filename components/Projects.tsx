@@ -96,18 +96,18 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+    <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-800 dark:text-gray-200">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-gray-200">
             Featured Projects
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4 sm:px-0">
             Real-world applications built with modern technologies and best practices
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -124,7 +124,7 @@ export default function Projects() {
 
               {/* Project Image */}
               {project.image && (
-                <div className="relative h-56 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                <div className="relative h-48 sm:h-56 bg-gray-200 dark:bg-gray-700 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={`${project.title} screenshot`}
@@ -136,15 +136,15 @@ export default function Projects() {
                 </div>
               )}
 
-              <div className="p-7">
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              <div className="p-5 sm:p-7">
+                <div className="mb-3 sm:mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
-                  <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                  <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-400 mb-5 leading-relaxed text-base line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 sm:mb-5 leading-relaxed text-sm sm:text-base line-clamp-3">
                   {project.description}
                 </p>
 

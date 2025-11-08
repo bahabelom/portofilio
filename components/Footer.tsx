@@ -4,15 +4,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-gray-300 py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-sm">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-center md:text-left">
+            <p className="text-xs sm:text-sm">
               © {currentYear} Software Developer at IE Networks. All rights reserved.
             </p>
           </div>
-          <div className="flex space-x-6">
+          <div className="flex space-x-4 sm:space-x-6">
             <a
               href="https://github.com/bahabelom"
               target="_blank"
