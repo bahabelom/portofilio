@@ -42,10 +42,10 @@ export default function Hero() {
       {/* Subtle grid pattern */}
       {/* Grid pattern removed */}
 
-      <div className="relative max-w-6xl mx-auto z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="relative max-w-6xl mx-auto z-10 w-full py-12 sm:py-16 lg:py-20">
+        <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
           {/* Left Side - Text Content */}
-          <div className={`flex-1 text-center lg:text-left transition-all duration-1000 ${
+          <div className={`flex-1 text-center lg:text-left w-full transition-all duration-1000 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}>
             {/* Greeting - Made Bigger */}
@@ -75,7 +75,7 @@ export default function Hero() {
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-4 justify-center lg:justify-start mb-8">
+            <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8">
               <a
                 href="https://github.com/bahabelom"
                 target="_blank"
@@ -132,7 +132,7 @@ export default function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-2 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10">
               <Link
                 href="#projects"
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-semibold text-base sm:text-lg shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:-translate-y-1 overflow-hidden group relative text-center"
@@ -175,7 +175,7 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-8">
+            <div className="mt-8 sm:mt-12 flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8">
               <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   {yearsOfExperience}+
@@ -192,10 +192,10 @@ export default function Hero() {
           </div>
 
           {/* Right Side - Photo */}
-          <div className={`flex-shrink-0 transition-all duration-1000 delay-300 ${
+          <div className={`flex-shrink-0 w-full lg:w-auto transition-all duration-1000 delay-300 ${
             mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           }`}>
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto lg:mx-0">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto lg:mx-0">
               <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700 ring-4 ring-blue-500/20 dark:ring-purple-500/20" style={{ position: 'relative' }}>
                 <Image
                   src="/projects/myphoto.jpg"
