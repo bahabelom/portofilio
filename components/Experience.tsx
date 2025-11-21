@@ -55,7 +55,7 @@ export default function Experience() {
     },
     {
       company: "Freelance / Self-Employed",
-      position: "Full Stack Developer",
+      position: "Software Developer",
       location: "Addis Ababa, Ethiopia",
       period: "Jan 2021 – Dec 2022",
       type: "Previous",
