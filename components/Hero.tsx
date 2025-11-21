@@ -110,7 +110,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="https://www.youtube.com/@yourchannel"
+                href="https://www.youtube.com/@bahabetech"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 border border-gray-200 dark:border-gray-700 group"
